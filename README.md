@@ -1,0 +1,24 @@
+<p align="center">
+  <a href="https://spring.io/" target="blank"><img src="https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg" width="200" alt="Spring Logo" /></a>
+</p>
+
+<!-- estas instrucciones permitira que otro desarrollador puedan ejecutar -->
+# Nota
+* Se esta usando un repositorio de base de datos en la nube: [ElephantSQL](https://www.elephantsql.com/)
+
+
+# Ejecutar en desarrollo
+1. Tener docker instalado:
+* [Docker Desktop](https://www.docker.com/get-started)
+2. Clonar el repositorio de github
+3. Ejecutar de archivo Dockerfile, para construir la imagen, con todas las dependencia, usando el comando en consola en la raíz del proyecto:
+```
+docker buil -t inventario_vacunacion:1.0 .
+```
+4. Para correr el contenedor, usando el comando en consola en la raíz del proyecto:
+```
+docker run -p:8081:8080 inventario_vacunacion:1.0
+```
+## Stack usado
+* Spring boot
+* Postgresql
