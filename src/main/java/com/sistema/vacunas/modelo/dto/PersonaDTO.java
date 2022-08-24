@@ -1,21 +1,21 @@
-package com.sistema.vacunas.DTO;
+package com.sistema.vacunas.modelo.dto;
 
 public class PersonaDTO {
-    private  Integer id;
+    private Integer personaId;
     private String fecha_nacimiento;
     private String direccion;
     private String telefono;
     private String estado_vacuna;
     private String fecha_vacunacion;
     private Integer numero_dosis;
-    private String usuario;
-    private String tipoVacunas;
+    private Integer usuario;
+    private Integer tipoVacunas;
 
     public PersonaDTO() {
     }
 
-    public PersonaDTO(Integer id, String fecha_nacimiento, String direccion, String telefono, String estado_vacuna, String fecha_vacunacion, Integer numero_dosis, String usuario, String tipoVacunas) {
-        this.id = id;
+    public PersonaDTO(Integer personaId, String fecha_nacimiento, String direccion, String telefono, String estado_vacuna, String fecha_vacunacion, Integer numero_dosis, Integer usuario, Integer tipoVacunas) {
+        this.personaId= personaId;
         this.fecha_nacimiento = fecha_nacimiento;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -26,12 +26,12 @@ public class PersonaDTO {
         this.tipoVacunas = tipoVacunas;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getPersonaId() {
+        return personaId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPersonaId(Integer personaId) {
+        this.personaId = personaId;
     }
 
     public String getFecha_nacimiento() {
@@ -82,19 +82,19 @@ public class PersonaDTO {
         this.numero_dosis = numero_dosis;
     }
 
-    public String getUsuario() {
+    public Integer getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(Integer usuario) {
         this.usuario = usuario;
     }
 
-    public String getTipoVacunas() {
+    public Integer getTipoVacunas() {
         return tipoVacunas;
     }
 
-    public void setTipoVacunas(String tipoVacunas) {
+    public void setTipoVacunas(Integer tipoVacunas) {
         this.tipoVacunas = tipoVacunas;
     }
 }

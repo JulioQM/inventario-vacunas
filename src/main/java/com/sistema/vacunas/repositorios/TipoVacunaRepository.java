@@ -1,5 +1,5 @@
 package com.sistema.vacunas.repositorios;
-import com.sistema.vacunas.entidades.TipoVacunas;
+import com.sistema.vacunas.modelo.entidades.TipoVacunas;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TipoVacunaRepository extends JpaRepository<TipoVacunas,Long> {

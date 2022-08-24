@@ -1,4 +1,4 @@
-package com.sistema.vacunas.entidades;
+package com.sistema.vacunas.modelo.entidades;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -142,5 +142,29 @@ public class Persona {
     }
     /*creacion del contructor*/
     public Persona() {
+    }
+
+    public Persona(String fecha_nacimiento, String direccion, String telefono, String estado_vacuna, String fecha_vacunacion, Integer numero_dosis, Usuario usuario, TipoVacunas tipoVacunas) {
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.estado_vacuna = estado_vacuna;
+        this.fecha_vacunacion = fecha_vacunacion;
+        this.numero_dosis = numero_dosis;
+        this.usuario = usuario;
+        this.tipoVacunas = tipoVacunas;
+    }
+
+    public Persona(long id, String fecha_nacimiento, String direccion, String telefono, String estado_vacuna, String fecha_vacunacion, Integer numero_dosis, Timestamp fecha_creacion,Usuario usuario, TipoVacunas tipoVacunas) {
+        this.id = id;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.estado_vacuna = estado_vacuna;
+        this.fecha_vacunacion = fecha_vacunacion;
+        this.numero_dosis = numero_dosis;
+        this.fecha_creacion=fecha_creacion;
+        this.usuario = usuario;
+        this.tipoVacunas = tipoVacunas;
     }
 }

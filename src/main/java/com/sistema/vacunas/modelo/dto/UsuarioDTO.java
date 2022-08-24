@@ -1,10 +1,7 @@
-package com.sistema.vacunas.DTO;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+package com.sistema.vacunas.modelo.dto;
 
 public class UsuarioDTO {
-
-    private  Integer id;
+    private  Integer usuarioId;
     private String cedula;
     private String nombres;
     private String apellidos;
@@ -12,21 +9,20 @@ public class UsuarioDTO {
     //@JsonIgnore
     private String clave;
     private Integer rol;
-
     private boolean estado;
 
     public UsuarioDTO() {
     }
-    public UsuarioDTO(Integer id, String cedula, String nombres, String apellidos, String email) {
-        this.id = id;
+    public UsuarioDTO(Integer usuarioId, String cedula, String nombres, String apellidos, String email) {
+        this.usuarioId = usuarioId;
         this.cedula = cedula;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.email = email;
     }
 
-    public UsuarioDTO( Integer id,String cedula, String nombres, String apellidos, String email,Integer rol,boolean estado) {
-        this.id=id;
+    public UsuarioDTO( Integer usuarioId,String cedula, String nombres, String apellidos, String email,Integer rol,boolean estado) {
+        this.usuarioId=usuarioId;
         this.cedula = cedula;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -36,14 +32,12 @@ public class UsuarioDTO {
     }
 
 
-    public Integer getId() {
-        return id;
+    public Integer getUsuarioId() {
+        return usuarioId;
     }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUsuarioId(Integer usuarioId) {
+        this.usuarioId = usuarioId;
     }
-
     public String getCedula() {
         return cedula;
     }

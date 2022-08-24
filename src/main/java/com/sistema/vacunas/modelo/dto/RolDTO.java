@@ -1,27 +1,25 @@
-package com.sistema.vacunas.DTO;
+package com.sistema.vacunas.modelo.dto;
 
 public class RolDTO {
 
-    private  Integer id;
+    private  Integer rolId;
     private String nombre;
     private String descripcion;
 
     public RolDTO() {
     }
-    public RolDTO(Integer id, String nombre, String descripcion) {
-        this.id = id;
+    public RolDTO(Integer rolId, String nombre, String descripcion) {
+        this.rolId = rolId;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getRolId() {
+        return rolId;
     }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public void setRolId(Integer rolId) {
+        this.rolId = rolId;
     }
-
     public String getNombre() {
         return nombre;
     }

@@ -1,6 +1,6 @@
-package com.sistema.vacunas.servicios.impl;
-import com.sistema.vacunas.DTO.RolDTO;
-import com.sistema.vacunas.entidades.Rol;
+package com.sistema.vacunas.servicios.implementaciones;
+import com.sistema.vacunas.modelo.dto.RolDTO;
+import com.sistema.vacunas.modelo.entidades.Rol;
 import com.sistema.vacunas.repositorios.RolRepository;
 import com.sistema.vacunas.servicios.RolService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,16 @@ public class RolServiceImpl implements RolService {
     private RolRepository rolRepository;
 
     @Override
+    public List<RolDTO> listarRol() {
+        List<RolDTO> listaRolDTO=new ArrayList<>();
+        /*Transformo la lista original en DTO*/
+        for (Rol rol:rolRepository.findAll()) {
+            RolDTO nuevoDTO=new RolDTO(((int) rol.getId()),rol.getNombre(),rol.getDescripcion());
+            listaRolDTO.add(nuevoDTO);
+        }
+        return listaRolDTO;
+    }
+    @Override
     public Rol guardarRol(Rol rol) throws Exception {
         Rol rolLocal=rolRepository.findByNombre(rol.getNombre());
         if(rolLocal!=null){
@@ -24,21 +34,15 @@ public class RolServiceImpl implements RolService {
         }
         return rolLocal;
     }
-
     @Override
-    public List<RolDTO> listarRol() {
-        List<RolDTO> listaRolDTO=new ArrayList<>();
-        /*Transformo la lista original en DTO*/
-        for (Rol rol:rolRepository.findAll()) {
-            RolDTO nuevoDTO=new RolDTO(((int) rol.getId()),rol.getNombre(),rol.getDescripcion());
-            listaRolDTO.add(nuevoDTO);
+    public Rol actualizarRol(long rolId,Rol rol) throws Exception {
+        Rol rolLocal=rolRepository.findById(rolId);
+        if(rolLocal!=null){
+            Rol actualizar=new Rol(rolLocal.getId(),rol.getNombre(),rol.getDescripcion());
+            actualizar.setFecha_creacion(rolLocal.getFecha_creacion());
+            return rolRepository.save(actualizar);
         }
-        return listaRolDTO;
-    }
-
-    @Override
-    public Rol obtenerRol(String nombre) {
-        return rolRepository.findByNombre(nombre);
+        throw new Exception("Id no existe");
     }
 
     @Override
@@ -52,15 +56,5 @@ public class RolServiceImpl implements RolService {
 
     }
 
-    @Override
-    public Rol actualizarRol(long rolId,Rol rol) throws Exception {
-         Rol rolLocal=rolRepository.findById(rolId);
-        if(rolLocal!=null){
-            Rol actualizar=new Rol(rolLocal.getId(),rol.getNombre(),rol.getDescripcion());
-            actualizar.setFecha_creacion(rolLocal.getFecha_creacion());
-            return rolRepository.save(actualizar);
-        }
-       throw new Exception("Id no existe");
 
-    }
 }
