@@ -1,6 +1,9 @@
 HELP.md
-target/
-!sistema-vacunas-backend-0.0.1-SNAPSHOT.jar
+## agregar archivo .jar
+!target/
+target/*
+!target/*.jar
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
